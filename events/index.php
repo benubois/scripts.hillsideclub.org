@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('America/Los_Angeles');
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/events/_includes/simplepie.inc');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/events/_includes/simplepie-gcalendar.php');
 
