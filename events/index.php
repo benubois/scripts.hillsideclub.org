@@ -35,6 +35,8 @@ $feed->set_cal_query($query);
 
 $feed->set_feed_url($url);
 $feed->enable_order_by_date(FALSE);
+$feed->enable_cache(TRUE);
+$feed->set_cache_location('../tmp');
 $feed->init();
 $feed->handle_content_type();
 $gcalendar_data = $feed->get_items();
