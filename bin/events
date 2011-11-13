@@ -4,8 +4,8 @@ error_reporting(0);
 
 date_default_timezone_set('America/Los_Angeles');
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/events/_includes/simplepie.inc');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/events/_includes/simplepie-gcalendar.php');
+require_once('../events/_includes/simplepie.inc');
+require_once('../events/_includes/simplepie-gcalendar.php');
 
 $email = '';
 $query = '';
@@ -42,7 +42,7 @@ $feed->init();
 $feed->handle_content_type();
 $gcalendar_data = $feed->get_items();
 
-$markup = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/events/_includes/partial.html');
+$markup = file_get_contents('../events/_includes/partial.html');
 $output = '';
 
 for ($i = 0; $i < sizeof($gcalendar_data) ; $i++)
@@ -84,7 +84,7 @@ for ($i = 0; $i < sizeof($gcalendar_data) ; $i++)
 	
 	$output .= str_replace(array_keys($replacements), $replacements, $markup);
 	
-	$result = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/tmp/events.inc', $output);
+	$result = file_put_contents('../tmp/events.inc', $output);
 	
 	var_dump($result);
 }
