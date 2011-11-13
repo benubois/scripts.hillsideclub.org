@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 error_reporting(0);
 
@@ -83,5 +84,7 @@ for ($i = 0; $i < sizeof($gcalendar_data) ; $i++)
 	
 	$output .= str_replace(array_keys($replacements), $replacements, $markup);
 	
-	file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/tmp/events.inc', $output);
+	$result = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/tmp/events.inc', $output);
+	
+	var_dump($result);
 }
