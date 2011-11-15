@@ -83,6 +83,4 @@ for ($i = 0; $i < sizeof($gcalendar_data) ; $i++)
 	$output .= str_replace(array_keys($replacements), $replacements, $markup);
 	
 	$result = file_put_contents('../tmp/events.inc', $output);
-	
-	var_dump($result);
 }
